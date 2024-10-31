@@ -8,19 +8,19 @@ up:
 
 .PHONY: ssh
 ssh:
-	@ssh drama@${IP}
+	@ssh ${USER}@${IP}
 
 .PHONY: down
 down:
-	@ssh drama@${IP} "echo ${PASSWORD} | sudo -S shutdown -h now"
+	@ssh ${USER}@${IP} "echo ${PASSWORD} | sudo -S shutdown -h now"
 
 .PHONY: sleep
 sleep:
-	@ssh drama@${IP} "echo ${PASSWORD} | sudo -S systemctl suspend"
+	@ssh ${USER}@${IP} "echo ${PASSWORD} | sudo -S systemctl suspend"
 
 .PHONY: reboot
 reboot:
-	@ssh drama@${IP} "echo ${PASSWORD} | sudo -S reboot"
+	@ssh ${USER}@${IP} "echo ${PASSWORD} | sudo -S reboot"
 
 .PHONY: ping-port
 ping-port:
@@ -29,3 +29,7 @@ ping-port:
 .PHONY: ping
 ping:
 	@ping ${IP}
+
+.PHONY: vps
+vps:
+	@ssh ${VPS_USER}@${VPS_IP}

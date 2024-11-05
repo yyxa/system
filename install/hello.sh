@@ -331,16 +331,22 @@ sudo apt install -y ktorrent
 # 
 sudo apt install -y usb-creator-kde
 
-# 
-# nekoray
-# link for guide
-# https://telegra.ph/NekoRay-v-Linyx-07-11
-# 
-sudo apt update
-sudo apt install -y libqt5x11extras5
-wget https://github.com/MatsuriDayo/nekoray/releases/download/4.0-beta3/nekoray-4.0-beta3-2024-07-13-debian-x64.deb
-sudo dpkg -i nekoray-4.0-beta3-2024-07-13-debian-x64.deb
+# # 
+# # nekoray
+# # link for guide
+# # https://telegra.ph/NekoRay-v-Linyx-07-11
+# # 
+# sudo apt update
+# sudo apt install -y libqt5x11extras5
+# wget https://github.com/MatsuriDayo/nekoray/releases/download/4.0-beta3/nekoray-4.0-beta3-2024-07-13-debian-x64.deb
+# sudo dpkg -i nekoray-4.0-beta3-2024-07-13-debian-x64.deb
 
+# 
+# hiddify
+# 
+sudo apt install -y libfuse2
+wget https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Linux-x64.AppImage
+chmod +x Hiddify-Linux-x64.AppImage
 # 
 # spoofdpi
 # 

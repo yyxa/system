@@ -317,6 +317,10 @@ sudo snap install bitwarden
 sudo snap connect bitwarden:password-manager-service
 
 # 
+# zoom
+# 
+sudo snap install zoom-client
+# 
 # libreoffice
 # 
 sudo apt install -y libreoffice

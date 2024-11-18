@@ -12,6 +12,8 @@
 # добавить yazi
 # https://yazi-rs.github.io/docs/installation/
 # 
+# добавить www.cursor.com
+# 
 # for tmux
 # https://www.youtube.com/watch?v=DzNmUNvnB04
 # https://www.youtube.com/results?search_query=tmux+config
@@ -242,6 +244,11 @@ sudo apt install -y yandex-browser-stable
 
 sudo rm /etc/apt/sources.list.d/yandex-browser.list
 sudo apt update
+
+# 
+# plantuml
+# 
+sudo apt install -y plantuml
 
 # 
 # flameshot

@@ -18,6 +18,9 @@
 # https://www.youtube.com/watch?v=DzNmUNvnB04
 # https://www.youtube.com/results?search_query=tmux+config
 # 
+# добавить git lfs и fl studio
+# 
+# 
 exec > >(tee -a logs.txt) 2> >(tee -a errors.txt >&2)
 
 sudo rm /etc/apt/preferences.d/nosnap.pref

@@ -41,3 +41,8 @@ ls-proxy:
 .PHONY: rm-proxy
 rm-proxy: 
 	@unset all_proxy ALL_PROXY https_proxy HTTPS_PROXY http_proxy HTTP_PROXY ftp_proxy FTP_PROXY no_proxy NO_PROXY
+
+.PHONY: vpn
+vpn:
+	@openvpn --config maxim.ovpn
+# sudo openvpn --config maxim.ovpn

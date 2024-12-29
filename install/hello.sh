@@ -68,7 +68,7 @@ snap refresh
 cd /usr/share/doc/git/contrib/credential/libsecret
 sudo make
 git config --global user.email "d33fur@gmail.com"
-git config --global user.name "d33fur"
+git config --global user.name "yyxa"
 git config --global credential.helper manager-core
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 

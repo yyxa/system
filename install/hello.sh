@@ -18,7 +18,7 @@
 # https://www.youtube.com/watch?v=DzNmUNvnB04
 # https://www.youtube.com/results?search_query=tmux+config
 # 
-# добавить git lfs и fl studio
+# добавить git lfs и ffmpeg pulseaudio kos rpm postgres redis wine flstudio steam
 # 
 # 
 exec > >(tee -a logs.txt) 2> >(tee -a errors.txt >&2)
@@ -154,20 +154,6 @@ cd btop
 make ADDFLAGS=-march=native
 sudo make install
 cd ~/system/install/
-
-# 
-# thefuck
-# 
-# thefuck  not working
-# due to using deprecated distutils in python3-setuptools
-# 
-# 
-# sudo apt update
-# sudo apt install -y \
-#     python3-dev \
-#     python3-pip \
-#     python3-setuptools
-# python3 -m pipx install thefuck
 
 # 
 # rust
@@ -345,31 +331,12 @@ sudo apt install -y ktorrent
 # 
 sudo apt install -y usb-creator-kde
 
-# # 
-# # nekoray
-# # link for guide
-# # https://telegra.ph/NekoRay-v-Linyx-07-11
-# # 
-# sudo apt update
-# sudo apt install -y libqt5x11extras5
-# wget https://github.com/MatsuriDayo/nekoray/releases/download/4.0-beta3/nekoray-4.0-beta3-2024-07-13-debian-x64.deb
-# sudo dpkg -i nekoray-4.0-beta3-2024-07-13-debian-x64.deb
-
 # 
 # hiddify
 # 
 sudo apt install -y libfuse2
 wget https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Linux-x64.AppImage
 chmod +x Hiddify-Linux-x64.AppImage
-# 
-# spoofdpi
-# 
-curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s linux-amd64
-echo 'export PATH=$PATH:~/.spoofdpi/bin' >> ~/.zshrc
-sudo cp ./spoofdpi.service /etc/systemd/system/spoofdpi.service
-sudo systemctl daemon-reload
-sudo systemctl enable spoofdpi.service
-sudo systemctl start spoofdpi.service
 
 # 
 # alacritty
@@ -430,4 +397,3 @@ fi
 
 # my files
 # murglar
-# nekoray

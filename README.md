@@ -11,15 +11,13 @@ system/
 │   ├── makefile              # удалённое управление ПК: WoL, ssh, shutdown, vpn, proxy
 │   └── example.env           # пример переменных для makefile
 ├── windows/                  # Windows 11 Pro
-│   ├── autounattend_128.xml  # автоустановка, раздел Windows 128 ГБ
-│   ├── autounattend_1000.xml # автоустановка, раздел Windows ~1000 ГБ
 │   ├── install_apps.ps1      # winget import + установка Murglar с GitHub releases
-│   └── key.ps1               # активация
+│   └── key.ps1               # активация (MAS /HWID)
 ├── flash-drive/              # файлы для Ventoy-флешки
-│   ├── ventoy/ventoy.json    # auto_install: windows11.iso -> scripts/autounattend.xml
+│   ├── ventoy/ventoy.json    # auto_install: windows11.iso -> scripts/autounattend_128.xml (по умолчанию)
 │   └── scripts/
-│       ├── autounattend.xml # автоустановка
-│       └── $OEM$/$$/Setup/Scripts/packages.json  # winget-пакеты
+│       ├── autounattend_128.xml   # автоустановка, раздел Windows 128 ГБ
+│       └── autounattend_1000.xml  # автоустановка, раздел Windows ~1000 ГБ
 ├── misc/wallpapers/          # обои
 ├── nixos/                    # задел под NixOS (пусто)
 └── .gitignore                # .env, логи, AppImage, ovpn и т.д.
@@ -58,10 +56,7 @@ make -C mint ls-proxy
 
 ### Windows
 
-1. Выбрать нужный `autounattend`: `autounattend_128.xml` или `autounattend_1000.xml`.
-   Сгенерированы через [schneegans.de/windows/unattend-generator](https://schneegans.de/windows/unattend-generator/):
-   ru-RU, GPT, Windows 11 Pro, пользователи `Admin` / `yyxa`, удаление лишних UWP-приложений.
-2. `key.ps1` и `install_apps.ps1` вшиты в autounattend.xml.
+`install_apps.ps1` устанавливает пакеты через winget (с логированием в `C:\Windows\Setup\Scripts\winget-install.log`) и additionally загружает Murglar с GitHub releases. `key.ps1` активирует Windows через MAS с флагами `/HWID /S`.
 
 ### Flash-drive (Ventoy)
 
@@ -69,4 +64,4 @@ make -C mint ls-proxy
 2. Скопировать на флешку:
    - `flash-drive/ventoy` -> корень флешки
    - `flash-drive/scripts/` -> корень флешки
-3. При загрузке Ventoy покажет меню выбора с `autounattend.xml`.
+3. При загрузке Ventoy покажет меню выбора. По умолчанию (autosel=1, timeout=0) берётся `autounattend_128.xml`; при необходимости можно вручную выбрать `autounattend_1000.xml` для диска ~1000 ГБ.

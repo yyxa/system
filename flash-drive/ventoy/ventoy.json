@@ -3,8 +3,11 @@
         {
             "image": "/windows11.iso",
             "template":[
-                "/scripts/autounattend.xml"
-            ]
+                "/scripts/autounattend_128.xml",
+                "/scripts/autounattend_1000.xml"
+            ],
+            "autosel": 1,
+            "timeout": 0
         }
     ]
 }

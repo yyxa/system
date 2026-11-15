@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
-	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=ru-RU&Locale=ru-RU&Keyboard=00000419&UseKeyboard2=true&Locale2=en-US&Keyboard2=00000409&GeoLocation=203&PEMode=Generated&Disable8Dot3Names=true&DisableDefender=true&InstallFromMode=Edition&InstallFromEdition=pro&PartitionMode=Custom&DiskpartScript=SELECT+DISK%3D0%0D%0ACLEAN%0D%0ACONVERT+GPT%0D%0ACREATE+PARTITION+EFI+SIZE%3D300%0D%0AFORMAT+QUICK+FS%3DFAT32+LABEL%3D%22System%22%0D%0AASSIGN+LETTER%3DS%0D%0ACREATE+PARTITION+MSR+SIZE%3D16%0D%0ACREATE+PARTITION+PRIMARY+SIZE%3D128000%0D%0AFORMAT+QUICK+FS%3DNTFS+LABEL%3D%22Windows%22%0D%0AASSIGN+LETTER%3DW&PagingFileMode=Automatic&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&UseConfigurationSet=true&ComputerNameMode=Custom&ComputerName=drama-windows&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=Admin&AccountDisplayName0=&AccountPassword0=&AccountGroup0=Administrators&AccountName1=yyxa&AccountDisplayName1=yyxa&AccountPassword1=1850&AccountGroup1=Users&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=None&ShowFileExtensions=true&LaunchToThisPC=true&TaskbarSearch=Hide&TaskbarIconsMode=Default&DisableWidgets=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableSac=true&DisableSmartScreen=true&DisableFastStartup=true&DisableSystemRestore=true&EnableLongPaths=true&AllowPowerShellScripts=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&DisableAutomaticRestartSignOn=true&DisableWpbt=true&PreventDeviceApps=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Default&StartFoldersMode=Default&CoreIsolationMode=Enabled&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Default&WallpaperMode=Default&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveClipchamp=true&RemoveClock=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveWindowsHello=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGameAssist=true&RemoveGetHelp=true&RemoveHandwriting=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMediaFeatures=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveNotepad=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOpenSSHClient=true&RemoveOutlook=true&RemovePaint=true&RemovePaint3D=true&RemovePeople=true&RemovePhotos=true&RemovePowerAutomate=true&RemovePowerShell2=true&RemovePowerShellISE=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveRdpClient=true&RemoveSkype=true&RemoveSnippingTool=true&RemoveSolitaire=true&RemoveSpeech=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveWindowsMediaPlayer=true&RemoveZuneMusic=true&RemoveWordPad=true&RemoveXboxApps=true&RemoveYourPhone=true&FirstLogonScript0=irm+https%3A%2F%2Fget.activated.win+%7C+iex&FirstLogonScriptType0=Ps1&FirstLogonScript1=%24ErrorActionPreference+%3D+%22Stop%22%0D%0A%24scriptDir+%3D+Split-Path+-Parent+%24MyInvocation.MyCommand.Path%0D%0A%0D%0Afunction+Install-GitHubRelease+%7B%0D%0A++++param%28%0D%0A++++++++%5Bstring%5D%24Repository%2C%0D%0A++++++++%5Bstring%5D%24AssetPattern%2C%0D%0A++++++++%5Bstring%5D%24InstallerArgs+%3D+%22%2FS%22%2C%0D%0A++++++++%5Bstring%5D%24InstallDir%2C++%23+%D0%94%D0%BB%D1%8F+zip%3A+%D0%BA%D1%83%D0%B4%D0%B0+%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%0D%0A++++++++%5Bswitch%5D%24Portable+++++%23+%D0%94%D0%BB%D1%8F+zip%3A+%D1%8D%D1%82%D0%BE+portable-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%0D%0A++++%29%0D%0A++++%0D%0A++++try+%7B%0D%0A++++++++%24release+%3D+Invoke-RestMethod+-Uri+%22https%3A%2F%2Fapi.github.com%2Frepos%2F%24Repository%2Freleases%2Flatest%22%0D%0A++++++++%24asset+%3D+%24release.assets+%7C+Where-Object+%7B+%24_.name+-match+%24AssetPattern+%7D+%7C+Select-Object+-First+1%0D%0A++++++++%0D%0A++++++++if+%28-not+%24asset%29+%7B%0D%0A++++++++++++Write-Warning+%22Asset+%D0%BD%D0%B5+%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD+%D0%B2+%24Repository%22%0D%0A++++++++++++return%0D%0A++++++++%7D%0D%0A++++++++%0D%0A++++++++%24downloadPath+%3D+%22%24env%3ATEMP%5C%24%28%24asset.name%29%22%0D%0A++++++++Invoke-WebRequest+-Uri+%24asset.browser_download_url+-OutFile+%24downloadPath%0D%0A++++++++%0D%0A++++++++if+%28%24Portable+-or+%24asset.name+-match+%27%5C.zip%24%27%29+%7B%0D%0A++++++++++++%24targetDir+%3D+if+%28%24InstallDir%29+%7B+%24InstallDir+%7D+else+%7B+%22C%3A%5CProgram+Files%5C%24%28%24asset.name+-replace+%27%5C.zip%24%27%2C%27%27%29%22+%7D%0D%0A++++++++++++New-Item+-ItemType+Directory+-Force+-Path+%24targetDir+%7C+Out-Null%0D%0A++++++++++++Expand-Archive+-Path+%24downloadPath+-DestinationPath+%24targetDir+-Force%0D%0A++++++++++++%0D%0A++++++++++++%24exeFiles+%3D+Get-ChildItem+-Path+%24targetDir+-Filter+%22*.exe%22+-Recurse+%7C+Where-Object+%7B+%24_.Name+-notmatch+%22unins%22+%7D%0D%0A++++++++++++if+%28%24exeFiles.Count+-gt+0%29+%7B%0D%0A++++++++++++++++%24mainExe+%3D+%24exeFiles%5B0%5D.FullName%0D%0A++++++++++++++++%24shortcutPath+%3D+%22%24env%3APUBLIC%5CDesktop%5C%24%28%24exeFiles%5B0%5D.BaseName%29.lnk%22%0D%0A++++++++++++++++%24WshShell+%3D+New-Object+-ComObject+WScript.Shell%0D%0A++++++++++++++++%24Shortcut+%3D+%24WshShell.CreateShortcut%28%24shortcutPath%29%0D%0A++++++++++++++++%24Shortcut.TargetPath+%3D+%24mainExe%0D%0A++++++++++++++++%24Shortcut.WorkingDirectory+%3D+Split-Path+%24mainExe%0D%0A++++++++++++++++%24Shortcut.Save%28%29%0D%0A++++++++++++%7D%0D%0A++++++++++++%0D%0A++++++++%7D%0D%0A++++++++else+%7B%0D%0A++++++++++++Start-Process+-FilePath+%24downloadPath+-ArgumentList+%24InstallerArgs+-Wait%0D%0A++++++++%7D%0D%0A++++++++%0D%0A++++++++Remove-Item+%24downloadPath+-ErrorAction+SilentlyContinue%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Write-Warning+%22%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%24Repository+%3A+%24_%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0A%24packagesFile+%3D+Join-Path+%24scriptDir+%22packages.json%22%0D%0Aif+%28Test-Path+%24packagesFile%29+%7B%0D%0A++++winget+import+%24packagesFile+%2D%2Daccept-package-agreements+%2D%2Daccept-source-agreements+%2D%2Dsilent%0D%0A%7D+else+%7B%0D%0A++++Write-Warning+%22packages.json+not+found%21%22%0D%0A%7D%0D%0A%0D%0A%24env%3APath+%3D+%5BSystem.Environment%5D%3A%3AGetEnvironmentVariable%28%22Path%22%2C%22Machine%22%29+%2B+%22%3B%22+%2B+%5BSystem.Environment%5D%3A%3AGetEnvironmentVariable%28%22Path%22%2C%22User%22%29%0D%0A%0D%0AInstall-GitHubRelease+%60%0D%0A++++-Repository+%22badmannersteam%2Fmurglar-downloads%22+%60%0D%0A++++-AssetPattern+%22Murglar.*windows.*%5C.zip%22+%60%0D%0A++++-InstallDir+%22C%3A%5CProgram+Files%5CMurglar%22+%60%0D%0A++++-Portable%0D%0A&FirstLogonScriptType1=Ps1&AppLockerMode=Skip-->
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=ru-RU&Locale=ru-RU&Keyboard=00000419&UseKeyboard2=true&Locale2=en-US&Keyboard2=00000409&GeoLocation=203&PEMode=Generated&Disable8Dot3Names=true&DisableDefender=true&InstallFromMode=Edition&InstallFromEdition=pro&PartitionMode=Custom&DiskpartScript=SELECT+DISK%3D0%0D%0ACLEAN%0D%0ACONVERT+GPT%0D%0ACREATE+PARTITION+EFI+SIZE%3D300%0D%0AFORMAT+QUICK+FS%3DFAT32+LABEL%3D%22System%22%0D%0AASSIGN+LETTER%3DS%0D%0ACREATE+PARTITION+MSR+SIZE%3D16%0D%0ACREATE+PARTITION+PRIMARY+SIZE%3D1000000%0D%0AFORMAT+QUICK+FS%3DNTFS+LABEL%3D%22Windows%22%0D%0AASSIGN+LETTER%3DW&PagingFileMode=Automatic&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&UseConfigurationSet=true&ComputerNameMode=Custom&ComputerName=drama-windows&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=Admin&AccountDisplayName0=&AccountPassword0=&AccountGroup0=Administrators&AccountName1=yyxa&AccountDisplayName1=yyxa&AccountPassword1=1850&AccountGroup1=Users&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=None&ShowFileExtensions=true&LaunchToThisPC=true&TaskbarSearch=Hide&TaskbarIconsMode=Default&DisableWidgets=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableSac=true&DisableSmartScreen=true&DisableFastStartup=true&DisableSystemRestore=true&EnableLongPaths=true&AllowPowerShellScripts=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DisableEdgeStartupBoost=true&DisableAutomaticRestartSignOn=true&DisableWpbt=true&PreventDeviceApps=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Default&StartFoldersMode=Default&CoreIsolationMode=Enabled&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Disabled&ColorMode=Default&WallpaperMode=Default&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveCalculator=true&RemoveClipchamp=true&RemoveClock=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveWindowsHello=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGameAssist=true&RemoveGetHelp=true&RemoveHandwriting=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMediaFeatures=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveNotepad=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOpenSSHClient=true&RemoveOutlook=true&RemovePaint=true&RemovePaint3D=true&RemovePeople=true&RemovePhotos=true&RemovePowerAutomate=true&RemovePowerShell2=true&RemovePowerShellISE=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveRdpClient=true&RemoveSkype=true&RemoveSnippingTool=true&RemoveSolitaire=true&RemoveSpeech=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveWindowsMediaPlayer=true&RemoveZuneMusic=true&RemoveWordPad=true&RemoveXboxApps=true&RemoveYourPhone=true&FirstLogonScript0=%24masScript+%3D+irm+https%3A%2F%2Fget.activated.win%0D%0Aiex+%22%24masScript+%2FHWID%22&FirstLogonScriptType0=Ps1&FirstLogonScript1=%24ErrorActionPreference+%3D+%22Continue%22%0D%0A%0D%0A%24logFile+%3D+%22C%3A%5CWindows%5CSetup%5CScripts%5Cwinget-install.log%22%0D%0Afunction+Log+%7B%0D%0A++++param%28%5Bstring%5D%24Message%29%0D%0A++++%24line+%3D+%22%5B%7B0%7D%5D+%7B1%7D%22+-f+%28Get-Date+-Format+%27HH%3Amm%3Ass%27%29%2C+%24Message%0D%0A++++%24line+%7C+Out-File+-FilePath+%24logFile+-Append+-Encoding+UTF8%0D%0A++++Write-Host+%24line%0D%0A%7D%0D%0A%0D%0ALog+%22%3D%3D%3D+%D0%A1%D1%82%D0%B0%D1%80%D1%82+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%24%28Get-Date%29+%3D%3D%3D%22%0D%0A%0D%0A%23+%2D%2D-+%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D0%B5%D0%BC+%D0%B8+%D0%B6%D0%B4%D1%91%D0%BC+winget+%2D%2D-%0D%0A%24tries+%3D+0%0D%0Awhile+%28-not+%28Get-Command+winget+-ErrorAction+SilentlyContinue%29+-and+%24tries+-lt+30%29+%7B%0D%0A++++Log+%22winget+%D0%BD%D0%B5+%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%2C+%D0%B6%D0%B4%D1%91%D0%BC+5+%D1%81%D0%B5%D0%BA...+%28%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D0%B0+%24tries%29%22%0D%0A++++Start-Sleep+-Seconds+5%0D%0A++++%24tries%2B%2B%0D%0A%7D%0D%0Aif+%28-not+%28Get-Command+winget+-ErrorAction+SilentlyContinue%29%29+%7B%0D%0A++++Log+%22%D0%9E%D0%A8%D0%98%D0%91%D0%9A%D0%90%3A+winget+%D0%BD%D0%B5+%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD+%D0%BF%D0%BE%D1%81%D0%BB%D0%B5+150+%D1%81%D0%B5%D0%BA%D1%83%D0%BD%D0%B4+%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F.+%D0%92%D1%8B%D1%85%D0%BE%D0%B4.%22%0D%0A++++return%0D%0A%7D%0D%0ALog+%22winget+%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD%3A+%24%28%28Get-Command+winget%29.Source%29%22%0D%0Awinget+%2D%2Dversion+2%3E%261+%7C+ForEach-Object+%7B+Log+%22%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F+winget%3A+%24_%22+%7D%0D%0A%0D%0A%23+%2D%2D-+%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA+%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2+%2D%2D-%0D%0A%24packages+%3D+%40%28%0D%0A++++%27Git.Git%27%2C%0D%0A++++%27Hiddify.Next%27%2C%0D%0A++++%27VideoLAN.VLC%27%2C%0D%0A++++%27Flameshot.Flameshot%27%2C%0D%0A++++%27Obsidian.Obsidian%27%2C%0D%0A++++%27Telegram.TelegramDesktop%27%2C%0D%0A++++%27OpenVPNTechnologies.OpenVPNConnect%27%2C%0D%0A++++%27Modrinth.ModrinthApp%27%2C%0D%0A++++%27Mojang.MinecraftLauncher%27%2C%0D%0A++++%27Vivaldi.Vivaldi%27%2C%0D%0A++++%27Valve.Steam%27%2C%0D%0A++++%27OBSProject.OBSStudio%27%2C%0D%0A++++%27Discord.Discord%27%2C%0D%0A++++%27Stellarium.Stellarium%27%2C%0D%0A++++%27qBittorrent.qBittorrent%27%2C%0D%0A++++%27KDE.KDEConnect%27%2C%0D%0A++++%27Ditto.Ditto%27%2C%0D%0A++++%27kawaiiDango.pano-scrobbler%27%2C%0D%0A++++%27Voidstar.FilePilot%27%2C%0D%0A++++%27Microsoft.VisualStudioCode%27%0D%0A%29%0D%0A%0D%0A%23+%2D%2D-+%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0+%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B3%D0%BE+%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0+%2D%2D-%0D%0A%24failed+%3D+%40%28%29%0D%0Aforeach+%28%24pkg+in+%24packages%29+%7B%0D%0A++++Log+%22%3E%3E%3E+%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0+%24pkg+...%22%0D%0A++++try+%7B%0D%0A++++++++%23+%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D0%BC+%2D%2Dsource+winget%0D%0A++++++++%24output+%3D+winget+install+%2D%2Did+%24pkg+%2D%2Dexact+%2D%2Dsilent+%60%0D%0A++++++++++++%2D%2Dsource+winget+%60%0D%0A++++++++++++%2D%2Daccept-package-agreements+%2D%2Daccept-source-agreements+%60%0D%0A++++++++++++%2D%2Ddisable-interactivity+2%3E%261%0D%0A++++++++%0D%0A++++++++%24output+%7C+ForEach-Object+%7B+Log+%22++++%24_%22+%7D%0D%0A%0D%0A++++++++if+%28%24LASTEXITCODE+-ne+0%29+%7B%0D%0A++++++++++++Log+%22%21%21%21+%24pkg+%D0%B7%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BB%D1%81%D1%8F+%D1%81+%D0%BA%D0%BE%D0%B4%D0%BE%D0%BC+%24LASTEXITCODE%22%0D%0A++++++++++++%24failed+%2B%3D+%24pkg%0D%0A++++++++%7D+else+%7B%0D%0A++++++++++++Log+%22OK%3A+%24pkg%22%0D%0A++++++++%7D%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Log+%22%21%21%21+%D0%98%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D1%80%D0%B8+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B5+%24pkg+%3A+%24_%22%0D%0A++++++++%24failed+%2B%3D+%24pkg%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0ALog+%22%3D%3D%3D+%D0%98%D1%82%D0%BE%D0%B3+%3D%3D%3D%22%0D%0ALog+%22%D0%92%D1%81%D0%B5%D0%B3%D0%BE%3A+%24%28%24packages.Count%29%22%0D%0ALog+%22%D0%9E%D1%88%D0%B8%D0%B1%D0%BE%D0%BA%3A+%24%28%24failed.Count%29%22%0D%0Aif+%28%24failed.Count+-gt+0%29+%7B%0D%0A++++Log+%22%D0%9D%D0%B5+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%BB%D0%B8%D1%81%D1%8C%3A+%24%28%24failed+-join+%27%2C+%27%29%22%0D%0A%7D%0D%0ALog+%22%3D%3D%3D+%D0%9A%D0%BE%D0%BD%D0%B5%D1%86+%24%28Get-Date%29+%3D%3D%3D%22%0D%0A%0D%0A%23+%2D%2D-+Murglar+%D1%81+GitHub+%2D%2D-%0D%0Afunction+Install-GitHubRelease+%7B%0D%0A++++param%28%0D%0A++++++++%5Bstring%5D%24Repository%2C%0D%0A++++++++%5Bstring%5D%24AssetPattern%2C%0D%0A++++++++%5Bstring%5D%24InstallDir%2C%0D%0A++++++++%5Bswitch%5D%24Portable%0D%0A++++%29%0D%0A++++try+%7B%0D%0A++++++++Log+%22%3E%3E%3E+GitHub%3A+%24Repository%22%0D%0A++++++++%24release+%3D+Invoke-RestMethod+-Uri+%22https%3A%2F%2Fapi.github.com%2Frepos%2F%24Repository%2Freleases%2Flatest%22%0D%0A++++++++%24asset+%3D+%24release.assets+%7C+Where-Object+%7B+%24_.name+-match+%24AssetPattern+%7D+%7C+Select-Object+-First+1%0D%0A++++++++if+%28-not+%24asset%29+%7B%0D%0A++++++++++++Log+%22%21%21%21+Asset+%D0%BD%D0%B5+%D0%BD%D0%B0%D0%B9%D0%B4%D0%B5%D0%BD+%D0%B2+%24Repository%22%0D%0A++++++++++++return%0D%0A++++++++%7D%0D%0A++++++++%24downloadPath+%3D+%22%24env%3ATEMP%5C%24%28%24asset.name%29%22%0D%0A++++++++Invoke-WebRequest+-Uri+%24asset.browser_download_url+-OutFile+%24downloadPath%0D%0A++++++++if+%28%24Portable+-or+%24asset.name+-match+%27%5C.zip%24%27%29+%7B%0D%0A++++++++++++%24targetDir+%3D+if+%28%24InstallDir%29+%7B+%24InstallDir+%7D+else+%7B+%22C%3A%5CProgram+Files%5C%24%28%24asset.name+-replace+%27%5C.zip%24%27%2C%27%27%29%22+%7D%0D%0A++++++++++++New-Item+-ItemType+Directory+-Force+-Path+%24targetDir+%7C+Out-Null%0D%0A++++++++++++Expand-Archive+-Path+%24downloadPath+-DestinationPath+%24targetDir+-Force%0D%0A++++++++++++%24exeFiles+%3D+Get-ChildItem+-Path+%24targetDir+-Filter+%22*.exe%22+-Recurse+%7C+Where-Object+%7B+%24_.Name+-notmatch+%22unins%22+%7D%0D%0A++++++++++++if+%28%24exeFiles.Count+-gt+0%29+%7B%0D%0A++++++++++++++++%24mainExe+%3D+%24exeFiles%5B0%5D.FullName%0D%0A++++++++++++++++%24shortcutPath+%3D+%22%24env%3APUBLIC%5CDesktop%5C%24%28%24exeFiles%5B0%5D.BaseName%29.lnk%22%0D%0A++++++++++++++++%24WshShell+%3D+New-Object+-ComObject+WScript.Shell%0D%0A++++++++++++++++%24Shortcut+%3D+%24WshShell.CreateShortcut%28%24shortcutPath%29%0D%0A++++++++++++++++%24Shortcut.TargetPath+%3D+%24mainExe%0D%0A++++++++++++++++%24Shortcut.WorkingDirectory+%3D+Split-Path+%24mainExe%0D%0A++++++++++++++++%24Shortcut.Save%28%29%0D%0A++++++++++++++++Log+%22OK%3A+%D1%8F%D1%80%D0%BB%D1%8B%D0%BA+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD+%D0%B4%D0%BB%D1%8F+%24mainExe%22%0D%0A++++++++++++%7D%0D%0A++++++++%7D%0D%0A++++++++Remove-Item+%24downloadPath+-ErrorAction+SilentlyContinue%0D%0A++++%7D%0D%0A++++catch+%7B%0D%0A++++++++Log+%22%21%21%21+%D0%9E%D1%88%D0%B8%D0%B1%D0%BA%D0%B0+%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8+%24Repository+%3A+%24_%22%0D%0A++++%7D%0D%0A%7D%0D%0A%0D%0AInstall-GitHubRelease+%60%0D%0A++++-Repository+%22badmannersteam%2Fmurglar-downloads%22+%60%0D%0A++++-AssetPattern+%22Murglar.*windows.*%5C.zip%22+%60%0D%0A++++-InstallDir+%22C%3A%5CProgram+Files%5CMurglar%22+%60%0D%0A++++-Portable%0D%0A%0D%0ALog+%22%3D%3D%3D+%D0%A1%D0%BA%D1%80%D0%B8%D0%BF%D1%82+%D0%B7%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D1%91%D0%BD+%3D%3D%3D%22&FirstLogonScriptType1=Ps1&AppLockerMode=Skip-->
 	<settings pass="offlineServicing"></settings>
 	<settings pass="windowsPE">
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -47,7 +47,7 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>11</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:CONVERT GPT&amp;echo:echo:CREATE PARTITION EFI SIZE=300&amp;echo:echo:FORMAT QUICK FS=FAT32 LABEL=^^^"System^^^"&amp;echo:echo:ASSIGN LETTER=S&amp;echo:echo:CREATE PARTITION MSR SIZE=16&amp;echo:echo:CREATE PARTITION PRIMARY SIZE=128000)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:CONVERT GPT&amp;echo:echo:CREATE PARTITION EFI SIZE=300&amp;echo:echo:FORMAT QUICK FS=FAT32 LABEL=^^^"System^^^"&amp;echo:echo:ASSIGN LETTER=S&amp;echo:echo:CREATE PARTITION MSR SIZE=16&amp;echo:echo:CREATE PARTITION PRIMARY SIZE=1000000)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>12</Order>
@@ -264,7 +264,7 @@ call :print "The computer is booted in %FIRMWARE% mode, hence the target disk mu
     echo:FORMAT QUICK FS=FAT32 LABEL=^"System^"
     echo:ASSIGN LETTER=S
     echo:CREATE PARTITION MSR SIZE=16
-    echo:CREATE PARTITION PRIMARY SIZE=128000
+    echo:CREATE PARTITION PRIMARY SIZE=1000000
     echo:FORMAT QUICK FS=NTFS LABEL=^"Windows^"
     echo:ASSIGN LETTER=W
 )
@@ -365,6 +365,7 @@ foreach( $file in $Document.unattend.Extensions.File ) {
 $selectors = @(
 	'Microsoft.Microsoft3DViewer';
 	'Microsoft.BingSearch';
+	'Microsoft.WindowsCalculator';
 	'Clipchamp.Clipchamp';
 	'Microsoft.WindowsAlarms';
 	'Microsoft.Copilot';
@@ -562,38 +563,119 @@ New-Item -Path $key -ItemType 'Directory' -ErrorAction 'SilentlyContinue';
 Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type 'String';
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-01.ps1">
-irm https://get.activated.win | iex
+$masScript = irm https://get.activated.win
+iex "$masScript /HWID"
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-02.ps1">
-$ErrorActionPreference = "Stop"
-$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ErrorActionPreference = "Continue"
 
+$logFile = "C:\Windows\Setup\Scripts\winget-install.log"
+function Log {
+    param([string]$Message)
+    $line = "[{0}] {1}" -f (Get-Date -Format 'HH:mm:ss'), $Message
+    $line | Out-File -FilePath $logFile -Append -Encoding UTF8
+    Write-Host $line
+}
+
+Log "=== &#x421;&#x442;&#x430;&#x440;&#x442; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x438; $(Get-Date) ==="
+
+# --- &#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44F;&#x435;&#x43C; &#x438; &#x436;&#x434;&#x451;&#x43C; winget ---
+$tries = 0
+while (-not (Get-Command winget -ErrorAction SilentlyContinue) -and $tries -lt 30) {
+    Log "winget &#x43D;&#x435; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;, &#x436;&#x434;&#x451;&#x43C; 5 &#x441;&#x435;&#x43A;... (&#x43F;&#x43E;&#x43F;&#x44B;&#x442;&#x43A;&#x430; $tries)"
+    Start-Sleep -Seconds 5
+    $tries++
+}
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    Log "&#x41E;&#x428;&#x418;&#x411;&#x41A;&#x410;: winget &#x43D;&#x435; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D; &#x43F;&#x43E;&#x441;&#x43B;&#x435; 150 &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434; &#x43E;&#x436;&#x438;&#x434;&#x430;&#x43D;&#x438;&#x44F;. &#x412;&#x44B;&#x445;&#x43E;&#x434;."
+    return
+}
+Log "winget &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;: $((Get-Command winget).Source)"
+winget --version 2&gt;&amp;1 | ForEach-Object { Log "&#x432;&#x435;&#x440;&#x441;&#x438;&#x44F; winget: $_" }
+
+# --- &#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x43E;&#x432; ---
+$packages = @(
+    'Git.Git',
+    'GitHub.cli',
+    'Hiddify.Next',
+    'VideoLAN.VLC',
+    'Flameshot.Flameshot',
+    'Obsidian.Obsidian',
+    'Telegram.TelegramDesktop',
+    'OpenVPNTechnologies.OpenVPNConnect',
+    'Modrinth.ModrinthApp',
+    'Mojang.MinecraftLauncher',
+    'Vivaldi.Vivaldi',
+    'Valve.Steam',
+    'OBSProject.OBSStudio',
+    'Discord.Discord',
+    'Stellarium.Stellarium',
+    'qBittorrent.qBittorrent',
+    'KDE.KDEConnect',
+    'Ditto.Ditto',
+    'kawaiiDango.pano-scrobbler',
+    'Voidstar.FilePilot',
+    'Microsoft.VisualStudioCode',
+    'gopass.gopass',
+    'gopass.gopass-jsonapi'
+)
+
+# --- &#x423;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x430; ---
+$failed = @()
+foreach ($pkg in $packages) {
+    Log "&gt;&gt;&gt; &#x423;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; $pkg ..."
+    try {
+        # &#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x43C; --source winget
+        $output = winget install --id $pkg --exact --silent `
+            --source winget `
+            --accept-package-agreements --accept-source-agreements `
+            --disable-interactivity 2&gt;&amp;1
+        
+        $output | ForEach-Object { Log "    $_" }
+
+        if ($LASTEXITCODE -ne 0) {
+            Log "!!! $pkg &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x438;&#x43B;&#x441;&#x44F; &#x441; &#x43A;&#x43E;&#x434;&#x43E;&#x43C; $LASTEXITCODE"
+            $failed += $pkg
+        } else {
+            Log "OK: $pkg"
+        }
+    }
+    catch {
+        Log "!!! &#x418;&#x441;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x435; $pkg : $_"
+        $failed += $pkg
+    }
+}
+
+Log "=== &#x418;&#x442;&#x43E;&#x433; ==="
+Log "&#x412;&#x441;&#x435;&#x433;&#x43E;: $($packages.Count)"
+Log "&#x41E;&#x448;&#x438;&#x431;&#x43E;&#x43A;: $($failed.Count)"
+if ($failed.Count -gt 0) {
+    Log "&#x41D;&#x435; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x43B;&#x438;&#x441;&#x44C;: $($failed -join ', ')"
+}
+Log "=== &#x41A;&#x43E;&#x43D;&#x435;&#x446; $(Get-Date) ==="
+
+# --- Murglar &#x441; GitHub ---
 function Install-GitHubRelease {
     param(
         [string]$Repository,
         [string]$AssetPattern,
-        [string]$InstallerArgs = "/S",
-        [string]$InstallDir,  # &#x414;&#x43B;&#x44F; zip: &#x43A;&#x443;&#x434;&#x430; &#x440;&#x430;&#x441;&#x43F;&#x430;&#x43A;&#x43E;&#x432;&#x430;&#x442;&#x44C;
-        [switch]$Portable     # &#x414;&#x43B;&#x44F; zip: &#x44D;&#x442;&#x43E; portable-&#x43F;&#x440;&#x438;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x435;
+        [string]$InstallDir,
+        [switch]$Portable
     )
-    
     try {
+        Log "&gt;&gt;&gt; GitHub: $Repository"
         $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repository/releases/latest"
         $asset = $release.assets | Where-Object { $_.name -match $AssetPattern } | Select-Object -First 1
-        
         if (-not $asset) {
-            Write-Warning "Asset &#x43D;&#x435; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D; &#x432; $Repository"
+            Log "!!! Asset &#x43D;&#x435; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D; &#x432; $Repository"
             return
         }
-        
         $downloadPath = "$env:TEMP\$($asset.name)"
         Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $downloadPath
-        
         if ($Portable -or $asset.name -match '\.zip$') {
             $targetDir = if ($InstallDir) { $InstallDir } else { "C:\Program Files\$($asset.name -replace '\.zip$','')" }
             New-Item -ItemType Directory -Force -Path $targetDir | Out-Null
             Expand-Archive -Path $downloadPath -DestinationPath $targetDir -Force
-            
             $exeFiles = Get-ChildItem -Path $targetDir -Filter "*.exe" -Recurse | Where-Object { $_.Name -notmatch "unins" }
             if ($exeFiles.Count -gt 0) {
                 $mainExe = $exeFiles[0].FullName
@@ -603,34 +685,23 @@ function Install-GitHubRelease {
                 $Shortcut.TargetPath = $mainExe
                 $Shortcut.WorkingDirectory = Split-Path $mainExe
                 $Shortcut.Save()
+                Log "OK: &#x44F;&#x440;&#x43B;&#x44B;&#x43A; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D; &#x434;&#x43B;&#x44F; $mainExe"
             }
-            
         }
-        else {
-            Start-Process -FilePath $downloadPath -ArgumentList $InstallerArgs -Wait
-        }
-        
         Remove-Item $downloadPath -ErrorAction SilentlyContinue
     }
     catch {
-        Write-Warning "&#x41E;&#x448;&#x438;&#x431;&#x43A;&#x430; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x438; $Repository : $_"
+        Log "!!! &#x41E;&#x448;&#x438;&#x431;&#x43A;&#x430; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x438; $Repository : $_"
     }
 }
-
-$packagesFile = Join-Path $scriptDir "packages.json"
-if (Test-Path $packagesFile) {
-    winget import $packagesFile --accept-package-agreements --accept-source-agreements --silent
-} else {
-    Write-Warning "packages.json not found!"
-}
-
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 Install-GitHubRelease `
     -Repository "badmannersteam/murglar-downloads" `
     -AssetPattern "Murglar.*windows.*\.zip" `
     -InstallDir "C:\Program Files\Murglar" `
     -Portable
+
+Log "=== &#x421;&#x43A;&#x440;&#x438;&#x43F;&#x442; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x451;&#x43D; ==="
 		</File>
 		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
 $scripts = @(

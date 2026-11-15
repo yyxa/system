@@ -48,7 +48,8 @@ $packages = @(
     'Microsoft.VisualStudioCode',
     'gopass.gopass',
     'gopass.gopass-jsonapi',
-    'GnuPG.Gpg4win'
+    'GnuPG.Gpg4win',
+    'DeltaChat.DeltaChat'
 )
 
 $failed = @()

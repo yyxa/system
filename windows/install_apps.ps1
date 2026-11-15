@@ -47,7 +47,8 @@ $packages = @(
     'Voidstar.FilePilot',
     'Microsoft.VisualStudioCode',
     'gopass.gopass',
-    'gopass.gopass-jsonapi'
+    'gopass.gopass-jsonapi',
+    'GnuPG.Gpg4win'
 )
 
 $failed = @()

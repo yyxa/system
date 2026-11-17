@@ -27,12 +27,10 @@ winget --version 2>&1 | ForEach-Object { Log "версия winget: $_" }
 $packages = @(
     'Git.Git',
     'GitHub.cli',
-    'Hiddify.Next',
     'VideoLAN.VLC',
     'Flameshot.Flameshot',
     'Obsidian.Obsidian',
     'Telegram.TelegramDesktop',
-    'OpenVPNTechnologies.OpenVPNConnect',
     'Modrinth.ModrinthApp',
     'Mojang.MinecraftLauncher',
     'Vivaldi.Vivaldi',
@@ -49,7 +47,8 @@ $packages = @(
     'gopass.gopass',
     'gopass.gopass-jsonapi',
     'GnuPG.Gpg4win',
-    'DeltaChat.DeltaChat'
+    'DeltaChat.DeltaChat',
+    'AmneziaVPN.AmneziaVPN'
 )
 
 $failed = @()

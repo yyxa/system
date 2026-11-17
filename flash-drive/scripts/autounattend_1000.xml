@@ -597,12 +597,10 @@ winget --version 2&gt;&amp;1 | ForEach-Object { Log "&#x432;&#x435;&#x440;&#x441
 $packages = @(
     'Git.Git',
     'GitHub.cli',
-    'Hiddify.Next',
     'VideoLAN.VLC',
     'Flameshot.Flameshot',
     'Obsidian.Obsidian',
     'Telegram.TelegramDesktop',
-    'OpenVPNTechnologies.OpenVPNConnect',
     'Modrinth.ModrinthApp',
     'Mojang.MinecraftLauncher',
     'Vivaldi.Vivaldi',
@@ -619,7 +617,8 @@ $packages = @(
     'gopass.gopass',
     'gopass.gopass-jsonapi',
     'GnuPG.Gpg4win',
-    'DeltaChat.DeltaChat'
+    'DeltaChat.DeltaChat',
+    'AmneziaVPN.AmneziaVPN'
 )
 
 # --- &#x423;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43A;&#x430; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x430; ---
